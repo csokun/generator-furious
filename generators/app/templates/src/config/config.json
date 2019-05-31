@@ -1,0 +1,21 @@
+{
+  "web": {
+    "port": "3000",
+    "host": "0.0.0.0",
+    "prefix": ""
+  },
+  "cors": {
+    "origin": "*",
+    "methods": ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  },
+  "logger": {
+    "enabled": true,
+    "level": "info",
+    "prettyPrint": false
+  },
+  "swagger": {
+  },
+  "features": {}
+}
