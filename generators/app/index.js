@@ -48,6 +48,11 @@ module.exports = class extends Generator {
       this.destinationPath(this.props.projectName)
     );
 
+    this.fs.copy(
+      this.templatePath(".*"),
+      this.destinationPath(this.props.projectName)
+    );
+
     const pkgJson = {
       name: this.props.projectName,
       version: this.props.projectVersion,
@@ -62,9 +67,10 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.destinationRoot("./" + this.props.projectName);
+    this.destinationRoot("./" + this.props.projectName + "/src");
     this.installDependencies({
       npm: true,
+      bower: false,
       yarn: false
     });
   }
