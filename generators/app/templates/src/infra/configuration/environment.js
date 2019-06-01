@@ -1,4 +1,4 @@
-const Environment = () => {
+const createEnv = () => {
   const name = (process.env.NODE_ENV || 'development').toLowerCase();
 
   switch (name) {
@@ -36,4 +36,4 @@ const Environment = () => {
   }
 };
 
-module.exports = Environment;
+module.exports = { createEnv };

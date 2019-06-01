@@ -4,7 +4,7 @@ const path = require('path');
 const Environment = require('./environment');
 
 module.exports = () => {
-  const env = Environment();
+  const env = Environment.createEnv();
   const { alias: envAlias } = env;
   const envVarsAppPrefix = 'app__';
   const rootPath = path.join(__dirname, '..', '..');
