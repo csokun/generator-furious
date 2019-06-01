@@ -58,11 +58,20 @@ module.exports = class extends Generator {
       name: this.props.projectName,
       version: this.props.projectVersion,
       description: this.props.projectDescription,
-      author: this.props.authorName
+      author: this.props.authorName,
+      scripts: {
+        postinstall: "link-module-alias",
+        preinstall:
+          "command -v link-module-alias && link-module-alias clean || true"
+      },
+      _moduleAliases: {
+        "~root": ".",
+        "~infra": "infra"
+      }
     };
 
     this.fs.extendJSON(
-      this.destinationPath("./" + this.props.projectName + "/package.json"),
+      this.destinationPath("./" + this.props.projectName + "/src/package.json"),
       pkgJson
     );
   }

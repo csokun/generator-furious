@@ -70,6 +70,9 @@
     "pretest": "eslint .",
     "test": "jest __tests__"
   },
-  "repository": "csokun/generator-furious",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csokun/generator-furious.git"
+  },
   "license": "MIT"
 }
