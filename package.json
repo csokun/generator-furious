@@ -1,7 +1,7 @@
 {
   "name": "generator-furious",
-  "version": "0.0.0",
-  "description": "Fastify boilerplate",
+  "version": "0.0.1",
+  "description": "Furious a Fastify boilerplate",
   "homepage": "https://github.com/csokun/generator-furious.git",
   "author": {
     "name": "Sokun Chorn",
@@ -11,9 +11,11 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "fastify",
+    "furious"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
