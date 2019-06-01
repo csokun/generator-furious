@@ -45,12 +45,13 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copy(
       this.templatePath(),
-      this.destinationPath(this.props.projectName)
-    );
-
-    this.fs.copy(
-      this.templatePath(".*"),
-      this.destinationPath(this.props.projectName)
+      this.destinationPath(this.props.projectName),
+      {
+        globOptions: {
+          ignore: ["**/node_modules/**"],
+          dot: true
+        }
+      }
     );
 
     const pkgJson = {
