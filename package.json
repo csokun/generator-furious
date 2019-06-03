@@ -27,7 +27,8 @@
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-config-xo": "^0.26.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3"
   },
   "engines": {
     "npm": ">= 10.0.0"
@@ -67,6 +68,7 @@
     ]
   },
   "scripts": {
+    "prepublish": "rimraf generators/app/templates/src/node_modules",
     "pretest": "eslint .",
     "test": "jest __tests__"
   },
