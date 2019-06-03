@@ -11,7 +11,11 @@ function createServer(appConfig, logger) {
     cors
   } = appConfig;
 
-  const fastify = Fastify({ logger, genReqId });
+  const fastify = Fastify({
+    logger,
+    requestIdLogLabel: 'correlationId',
+    genReqId
+  });
 
   fastify.register(ffhelmet);
   fastify.register(ffcors, cors);
