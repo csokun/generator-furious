@@ -18,7 +18,9 @@ function createServer(appConfig, logger) {
   });
 
   fastify.register(ffhelmet);
-  fastify.register(ffcors, cors);
+  if (cors && cors.enabled)
+    fastify.register(ffcors, cors);
+
   fastify.register(ffboom);
 
   fastify.setErrorHandler(ErrorHandler);
